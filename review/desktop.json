@@ -1,0 +1,19 @@
+{
+    "name": "ninja-adventure-desktop-movement",
+    "profile": "desktop",
+    "viewport": { "width": 1280, "height": 720 },
+    "minimum_fps": 5,
+    "actions": [
+        { "type": "assert", "path": "schema_version", "equals": 2 },
+        { "type": "assert", "path": "mode", "equals": "playing" },
+        { "type": "assert", "path": "game.player.present", "equals": true },
+        { "type": "screenshot", "name": "desktop-spawn" },
+        { "type": "key", "key": "ArrowRight", "duration_ms": 500 },
+        {
+            "type": "wait_for",
+            "path": "game.player.moved_from_spawn",
+            "equals": true
+        },
+        { "type": "screenshot", "name": "desktop-moved" }
+    ]
+}

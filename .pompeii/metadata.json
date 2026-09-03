@@ -1,0 +1,6 @@
+{
+    "version": 1,
+    "name": "Godot game",
+    "description": "A browser-ready Godot project with testing, export, and playtest tooling.",
+    "workbench": "godot-developer"
+}

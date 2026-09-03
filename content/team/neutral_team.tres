@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourceDamageTeam" load_steps=2 format=3 uid="uid://wqqpolmo6rvi"]
+
+[ext_resource type="Script" path="res://system/damage/resource_damage_team.gd" id="1_x6vbu"]
+
+[resource]
+script = ExtResource("1_x6vbu")
+ally_team = Array[int]([])

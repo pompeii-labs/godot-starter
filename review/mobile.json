@@ -1,0 +1,17 @@
+{
+    "name": "ninja-adventure-mobile-layout",
+    "profile": "mobile",
+    "viewport": { "width": 844, "height": 390 },
+    "minimum_fps": 5,
+    "actions": [
+        { "type": "assert", "path": "schema_version", "equals": 2 },
+        { "type": "assert", "path": "game.player.present", "equals": true },
+        { "type": "screenshot", "name": "mobile-landscape" },
+        { "type": "touch", "x": 422, "y": 195 },
+        { "type": "wait_for", "path": "input_mode", "equals": "touch" },
+        { "type": "orientation", "value": "portrait" },
+        { "type": "screenshot", "name": "mobile-portrait" },
+        { "type": "orientation", "value": "landscape" },
+        { "type": "screenshot", "name": "mobile-landscape-restored" }
+    ]
+}
