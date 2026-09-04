@@ -1,4 +1,8 @@
 {
     "version": 1,
-    "workbench": "godot-developer"
+    "name": "NinjaAdventure",
+    "description": "A browser-ready Godot game starter with a playable world, test and export tooling, and desktop and mobile playtest scenarios.",
+    "workbenches": [
+        "godot-developer"
+    ]
 }
