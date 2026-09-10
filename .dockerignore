@@ -1,8 +1,0 @@
-.git
-.github
-.codex
-.godot
-build
-*.tmp
-review
-tests
