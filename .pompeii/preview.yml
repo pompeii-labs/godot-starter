@@ -1,40 +1,12 @@
-version: 1
-runtime_target: godot
-jobs:
-    import:
-        mode: task
-        cwd: .
-        run: pompeii-godot doctor
-        timeout: 3m
-    test:
-        mode: task
-        cwd: .
-        depends_on:
-            - import
-        run: pompeii-godot test --junit build/test-results.xml
-        timeout: 3m
-    export-web:
-        mode: task
-        cwd: .
-        depends_on:
-            - test
-        run: pompeii-godot export-web --out build/web
-        timeout: 5m
+version: 2
+endpoints:
     game:
-        mode: service
-        cwd: .
-        depends_on:
-            - export-web
-        run: godot-web-server build/web {{ endpoints.game.port }}
-        endpoints:
-            game:
-                protocol: http
-                port: 4173
-                public: true
-                primary: true
-                health:
-                    type: http
-                    path: /index.html
-                    statuses:
-                        - 200
-                    timeout: 2m
+        protocol: http
+        port: 4173
+        public: true
+        primary: true
+        health:
+            type: http
+            path: /index.html
+            statuses: [200]
+            timeout: 2m
